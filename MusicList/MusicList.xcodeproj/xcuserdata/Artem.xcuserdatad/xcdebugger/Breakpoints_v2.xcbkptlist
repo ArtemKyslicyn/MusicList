@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Bucket
+   type = "1"
+   version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "MusicList/UI/MusicList/MusicListViewController.swift"
+            timestampString = "572214127.5285079"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "28"
+            endingLineNumber = "28"
+            landmarkName = "viewDidLoad()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Array&lt;MusicList.Artist&gt;) -&gt; () in MusicList.MusicListViewController.viewDidLoad() -&gt; ()"
+                  moduleName = "MusicList"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/arcilite/Documents/MusicList/MusicList/UI/MusicList/MusicListViewController.swift"
+                  timestampString = "572212739.366873"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "29"
+                  endingLineNumber = "29"
+                  offsetFromSymbolStart = "43">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (MusicList.Artist) -&gt; MusicList.ArtistItem in closure #1 (Swift.Array&lt;MusicList.Artist&gt;) -&gt; () in MusicList.MusicListViewController.viewDidLoad() -&gt; ()"
+                  moduleName = "MusicList"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/arcilite/Documents/MusicList/MusicList/UI/MusicList/MusicListViewController.swift"
+                  timestampString = "572212739.369179"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "30"
+                  endingLineNumber = "30"
+                  offsetFromSymbolStart = "26">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "MusicList/BuisnesLayer/MusicList/ArtistConverter.swift"
+            timestampString = "572214127.528627"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "17"
+            endingLineNumber = "17"
+            landmarkName = "convertDataToObjects(data:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
+</Bucket>
