@@ -1,3 +1,3 @@
 # MusicList
 
-Example a LightWeight Arhitecture 
+Example of a light weight Arhitecture aplication
