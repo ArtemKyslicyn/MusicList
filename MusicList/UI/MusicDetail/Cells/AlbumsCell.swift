@@ -10,14 +10,11 @@ import UIKit
 
 class AlbumsCell:ConstructorCell{
 	
-	override func configureCellWithItem(item:AbstractItem)
-	{
-		if let item = item as? AlbumItem
-		{
+	override func configureCellWithItem(item:AbstractItem){
+		if let item = item as? AlbumItem{
 			self.textLabel?.text = item.name + " - " + item.songName
 			self.imageView?.image = UIImage(named:"default-album-art")
-			if let imageUrl = URL(string:item.imageUrl)
-			{
+			if let imageUrl = URL(string:item.imageUrl){
 				self.imageView?.load(url:imageUrl )
 			}
 		}
