@@ -39,7 +39,11 @@ class MusicListViewController: UIViewController {
 		
 		
 		self.tableWorker.selectedItem = {item in
-			
+			if let item = item as? ArtistItem
+			{
+				let viewController = MusicDeatilViewController(albumId: item.artistId ?? 0)
+			    self.present(viewController, animated: true, completion: nil)
+			}
 			
 		}
 	}

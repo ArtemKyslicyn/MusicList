@@ -12,7 +12,6 @@ typealias ArtistSuccesBlock = ([Artist]) -> Void
 typealias ErrorBlock = (Error) -> Void
 
 protocol AbstractMusicListService {
-	func getArtists(success:ArtistSuccesBlock, errorBlock:ErrorBlock)
 	
 	func searchBy(string:String , success:@escaping ArtistSuccesBlock, errorBlock:@escaping ErrorBlock)
 }
@@ -43,29 +42,5 @@ class MusicListService : AbstractMusicListService {
 	
 	
 	let networkDispatcher:NetworkDispatcher = URLSessionNetworkDispatcher()
-	let converter = ArtistConverter()
-	
-//	func searchBy(string: String, success: @escaping ([Artist]) -> Void, errorBlock: (Error) -> Void) {
-//
-//		let request = PacketRequest(path: ApiURL.search.rawValue,params:[termKey:string])
-//		networkDispatcher.dispatch(request: request, onSuccess: { (data) in
-//			let arctists = self.converter.convertDataToObjects(data: data)
-//			success(arctists)
-//		}, onError: { (error) in
-//
-//		})
-//	}
-	
-	
-	func getArtists(success: ([Artist]) -> Void, errorBlock: (Error) -> Void) {
-		
-		
-		let request = PacketRequest(path: ApiURL.search.rawValue)
-		networkDispatcher.dispatch(request: request, onSuccess: { (data) in
-			
-		}, onError: { (error) in
-			
-		})
-	}
-	
+	let converter = ArtistConverter()	
 }
