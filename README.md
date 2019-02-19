@@ -1,3 +1,3 @@
 # MusicList
 
-Example of a light weight Arhitecture aplication
+Example of a light weight Arhitecture swift aplication
