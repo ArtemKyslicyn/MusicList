@@ -8,9 +8,9 @@
 
 import Foundation
 
-typealias  SelectedWorkerItem = (AbstractItem) -> ()
+typealias  SelectedWorkerItem = (AbstractItem) -> Void
 
 protocol AbstractWorker {
-	var selectedItem : SelectedWorkerItem? {get set}
-	var items : [AbstractItem]? {get set}
+	var selectedItem: SelectedWorkerItem? { get set }
+	var items: [AbstractItem]? { get set }
 }

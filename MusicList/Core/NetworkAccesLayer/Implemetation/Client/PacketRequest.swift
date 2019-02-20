@@ -8,13 +8,13 @@
 
 import Foundation
 
-public struct PacketRequest : AbstractRequest {
-	
+public struct PacketRequest: AbstractRequest {
+
 	public let path: String
 	public let method: HTTPMethod
 	public let params: [String: Any?]?
 	public let headers: [String: String]?
-	
+
 	public init (
 		path: String,
 		method: HTTPMethod = .get,

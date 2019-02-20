@@ -8,18 +8,16 @@
 
 import UIKit
 
-class ArtistCell: ConstructorCell{
-	
-	override func configureCellWithItem(item:AbstractItem)
-	{
-		if let item = item as? ArtistItem
-		{
+class ArtistCell: UITableViewCell, AbstractCell {
+
+	 func configureCellWithItem(item: AbstractItem) {
+		if let item = item as? ArtistItem {
 			self.textLabel?.text = item.name + " - " + item.songName
-			self.imageView?.image = UIImage(named:"default-album-art")
-			if let imageUrl = URL(string:item.imageUrl){
-				self.imageView?.load(url:imageUrl )
+			self.imageView?.image = UIImage(named: "default-album-art")
+			if let imageUrl = URL(string: item.imageUrl) {
+				self.imageView?.load(url: imageUrl, defaultImage: UIImage(named: "default-album-art")  )
 			}
 		}
 	}
-	
+
 }

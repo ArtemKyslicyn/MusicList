@@ -8,20 +8,20 @@
 
 import Foundation
 
-struct SearchResult : Codable {
-	
-	   let results:[Artist]
-	
-		enum CodingKeys : String, CodingKey {
+struct SearchResult: Codable {
+
+	   let results: [Artist]
+
+		enum CodingKeys: String, CodingKey {
 			case results
 		}
-	
-		init(from decoder:Decoder) throws {
+
+		init(from decoder: Decoder) throws {
 			let values = try decoder.container(keyedBy: CodingKeys.self)
 			results = try values.decode([Artist].self, forKey: .results)
 		}
-	
-		init(array : [Artist]) {
+
+		init(array: [Artist]) {
 			self.results = array
 		}
 }

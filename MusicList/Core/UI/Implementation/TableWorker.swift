@@ -8,18 +8,18 @@
 
 import UIKit
 
-class TableWorker<Item: TableItem, Cell: ConstructorCell> : NSObject, AbstractWorker, UITableViewDelegate, UITableViewDataSource {
+class TableWorker<Item: TableItem, Cell: UITableViewCell> : NSObject, AbstractWorker, UITableViewDelegate, UITableViewDataSource where Cell: AbstractCell {
 
-	private unowned let tableView : UITableView
-	public var items : [AbstractItem]? {
-		didSet{
+	private unowned let tableView: UITableView
+	public var items: [AbstractItem]? {
+		didSet {
 			self.tableView.reloadData()
 		}
 	}
-	
-	public var selectedItem : SelectedWorkerItem?
 
-	init(tableView:UITableView) {
+	public var selectedItem: SelectedWorkerItem?
+
+	init(tableView: UITableView) {
 		self.tableView = tableView
 		self.tableView.register(Cell.self, forCellReuseIdentifier: Cell.cellIdentifier)
 		super.init()
@@ -28,20 +28,19 @@ class TableWorker<Item: TableItem, Cell: ConstructorCell> : NSObject, AbstractWo
 	}
 
 	func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-		if let item = items?[indexPath.row]
-		{
+		if let item = items?[indexPath.row] {
 			self.selectedItem?(item)
 		}
 	}
-	
+
 	func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
 		return items?.count ?? 0
 	}
-	
+
 	func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-		let cell = tableView.dequeueReusableCell(withIdentifier: Cell.cellIdentifier, for: indexPath) as! Cell
-		
-		if let item = self.items?[indexPath.row] {
+		let cell = tableView.dequeueReusableCell(withIdentifier: Cell.cellIdentifier, for: indexPath)
+
+		if let item = self.items?[indexPath.row], let cell = cell as? Cell {
 			cell.configureCellWithItem(item: item)
 		}
 

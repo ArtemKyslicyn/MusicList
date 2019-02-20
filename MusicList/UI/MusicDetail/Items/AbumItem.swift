@@ -8,16 +8,16 @@
 
 import Foundation
 
-class AlbumItem:TableItem{
-	
-	let name:String
-	let songName:String
-	let imageUrl:String
-	
-	init(name:String, songName:String, imageUrl:String, artistId:UInt64? = nil) {
+class AlbumItem: TableItem {
+
+	let name: String
+	let songName: String
+	let imageUrl: String
+
+	init(name: String, songName: String, imageUrl: String, artistId: UInt64? = nil) {
 		self.name = name
 		self.songName = songName
 		self.imageUrl = imageUrl
 	}
-	
+
 }

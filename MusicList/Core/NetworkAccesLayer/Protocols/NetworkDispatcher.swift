@@ -22,9 +22,6 @@ public enum HTTPMethod: String {
 	case patch = "PATCH"
 }
 
-
 public protocol NetworkDispatcher {
 	func dispatch<T: AbstractRequest>(request: T, onSuccess: @escaping (Data) -> Void, onError: @escaping (Error) -> Void)
 }
-
-

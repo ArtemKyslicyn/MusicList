@@ -9,8 +9,8 @@
 import Foundation
 
 public protocol AbstractRequest {
-	var path: String {get}
-	var method: HTTPMethod  {get}
-	var params: [String: Any?]?  {get}
-	var headers: [String: String]?  {get}
+	var path: String { get }
+	var method: HTTPMethod { get }
+	var params: [String: Any?]? { get }
+	var headers: [String: String]? { get }
 }

@@ -34,7 +34,6 @@
 		ACE25CB72218CCE0008F1784 /* AbstractWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACE25CB62218CCE0008F1784 /* AbstractWorker.swift */; };
 		ACE25CB92218CCFE008F1784 /* AbstractItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACE25CB82218CCFE008F1784 /* AbstractItem.swift */; };
 		ACE25CBE2218D322008F1784 /* AbstractCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACE25CBD2218D322008F1784 /* AbstractCell.swift */; };
-		ACE25CC02218D44A008F1784 /* ConstructorCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACE25CBF2218D44A008F1784 /* ConstructorCell.swift */; };
 		ACE25CC32218DDEE008F1784 /* ArtistCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACE25CC22218DDEE008F1784 /* ArtistCell.swift */; };
 		ACE25CC62218E6AF008F1784 /* MusicListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACE25CC52218E6AF008F1784 /* MusicListView.swift */; };
 		CE45E6E4221C8EBD00113557 /* ReuseIdentifierProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE45E6E3221C8EBD00113557 /* ReuseIdentifierProtocol.swift */; };
@@ -82,7 +81,6 @@
 		ACE25CB62218CCE0008F1784 /* AbstractWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AbstractWorker.swift; sourceTree = "<group>"; };
 		ACE25CB82218CCFE008F1784 /* AbstractItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AbstractItem.swift; sourceTree = "<group>"; };
 		ACE25CBD2218D322008F1784 /* AbstractCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AbstractCell.swift; sourceTree = "<group>"; };
-		ACE25CBF2218D44A008F1784 /* ConstructorCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConstructorCell.swift; sourceTree = "<group>"; };
 		ACE25CC22218DDEE008F1784 /* ArtistCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtistCell.swift; sourceTree = "<group>"; };
 		ACE25CC52218E6AF008F1784 /* MusicListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicListView.swift; sourceTree = "<group>"; };
 		CE45E6E3221C8EBD00113557 /* ReuseIdentifierProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReuseIdentifierProtocol.swift; sourceTree = "<group>"; };
@@ -332,7 +330,6 @@
 		ACE25CBB2218D017008F1784 /* Implementation */ = {
 			isa = PBXGroup;
 			children = (
-				ACE25CBF2218D44A008F1784 /* ConstructorCell.swift */,
 				ACE25CB32218CAE4008F1784 /* TableItem.swift */,
 				ACE25CAE2218C9F3008F1784 /* TableWorker.swift */,
 			);
@@ -365,6 +362,7 @@
 				ACE25C6F221891F5008F1784 /* Sources */,
 				ACE25C70221891F5008F1784 /* Frameworks */,
 				ACE25C71221891F5008F1784 /* Resources */,
+				ACE1182E221DE06800D7792B /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -451,6 +449,26 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		ACE1182E221DE06800D7792B /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if which swiftlint >/dev/null; then\nswiftlint\nelse\necho \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		ACE25C6F221891F5008F1784 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -462,7 +480,6 @@
 				ACE25CBE2218D322008F1784 /* AbstractCell.swift in Sources */,
 				ACE25CA12218B92D008F1784 /* MusicDetailSercvice.swift in Sources */,
 				ACE25CC62218E6AF008F1784 /* MusicListView.swift in Sources */,
-				ACE25CC02218D44A008F1784 /* ConstructorCell.swift in Sources */,
 				AC0819142219C7430004C6A3 /* UIImageViewLoadExtenstion.swift in Sources */,
 				ACE25C97221896BC008F1784 /* MusicDeatilViewController.swift in Sources */,
 				AC08192B221BB9A10004C6A3 /* MusicDeatilView.swift in Sources */,

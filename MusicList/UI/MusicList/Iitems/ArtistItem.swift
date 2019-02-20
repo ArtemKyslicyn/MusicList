@@ -8,17 +8,17 @@
 
 import Foundation
 
-class ArtistItem:TableItem{
-	let name:String
-	let songName:String
-	let imageUrl:String
-	let artistId:UInt64?
-	
-	init(name:String, songName:String, imageUrl:String, artistId:UInt64? = nil) {
+class ArtistItem: TableItem {
+	let name: String
+	let songName: String
+	let imageUrl: String
+	let artistId: UInt64?
+
+	init(name: String, songName: String, imageUrl: String, artistId: UInt64? = nil) {
 		self.name = name
 		self.songName = songName
 		self.imageUrl = imageUrl
 		self.artistId = artistId
 	}
-	
+
 }
