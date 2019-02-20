@@ -10,7 +10,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "MusicList/UI/MusicList/MusicListViewController.swift"
-            timestampString = "572248116.486359"
+            timestampString = "572243484.820609"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "28"
@@ -25,8 +25,8 @@
                   symbolName = "closure #1 (Swift.Array&lt;MusicList.Artist&gt;) -&gt; () in MusicList.MusicListViewController.viewDidLoad() -&gt; ()"
                   moduleName = "MusicList"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/arcilite/Documents/MusicListGitHub/MusicList/UI/MusicList/MusicListViewController.swift"
-                  timestampString = "572248116.495443"
+                  urlString = "file:///Users/arcilite/Documents/MusicList/MusicList/UI/MusicList/MusicListViewController.swift"
+                  timestampString = "572212739.366873"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "29"
@@ -40,8 +40,8 @@
                   symbolName = "closure #1 (MusicList.Artist) -&gt; MusicList.ArtistItem in closure #1 (Swift.Array&lt;MusicList.Artist&gt;) -&gt; () in MusicList.MusicListViewController.viewDidLoad() -&gt; ()"
                   moduleName = "MusicList"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/arcilite/Documents/MusicListGitHub/MusicList/UI/MusicList/MusicListViewController.swift"
-                  timestampString = "572248116.4982589"
+                  urlString = "file:///Users/arcilite/Documents/MusicList/MusicList/UI/MusicList/MusicListViewController.swift"
+                  timestampString = "572212739.369179"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "30"
@@ -63,23 +63,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "17"
             endingLineNumber = "17"
-            landmarkName = "convertDataToObjects(data:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "MusicList/BuisnesLayer/MusicDetail/MusicDetailSercvice.swift"
-            timestampString = "572248116.486526"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "28"
-            endingLineNumber = "28"
-            landmarkName = "albumsBy(albumId:success:errorBlock:)"
+            landmarkName = "convertDataToObject(_:data:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

@@ -37,6 +37,7 @@
 		ACE25CC02218D44A008F1784 /* ConstructorCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACE25CBF2218D44A008F1784 /* ConstructorCell.swift */; };
 		ACE25CC32218DDEE008F1784 /* ArtistCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACE25CC22218DDEE008F1784 /* ArtistCell.swift */; };
 		ACE25CC62218E6AF008F1784 /* MusicListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACE25CC52218E6AF008F1784 /* MusicListView.swift */; };
+		CE45E6E4221C8EBD00113557 /* ReuseIdentifierProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE45E6E3221C8EBD00113557 /* ReuseIdentifierProtocol.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -84,6 +85,7 @@
 		ACE25CBF2218D44A008F1784 /* ConstructorCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConstructorCell.swift; sourceTree = "<group>"; };
 		ACE25CC22218DDEE008F1784 /* ArtistCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtistCell.swift; sourceTree = "<group>"; };
 		ACE25CC52218E6AF008F1784 /* MusicListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicListView.swift; sourceTree = "<group>"; };
+		CE45E6E3221C8EBD00113557 /* ReuseIdentifierProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReuseIdentifierProtocol.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -292,7 +294,6 @@
 			isa = PBXGroup;
 			children = (
 				ACE25CB52218CBC4008F1784 /* UI */,
-				ACE25CBC2218D2EB008F1784 /* DataAccessLayer */,
 				ACE25C982218976D008F1784 /* NetworkAccesLayer */,
 			);
 			path = Core;
@@ -323,6 +324,7 @@
 				ACE25CB62218CCE0008F1784 /* AbstractWorker.swift */,
 				ACE25CB82218CCFE008F1784 /* AbstractItem.swift */,
 				ACE25CBD2218D322008F1784 /* AbstractCell.swift */,
+				CE45E6E3221C8EBD00113557 /* ReuseIdentifierProtocol.swift */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -335,13 +337,6 @@
 				ACE25CAE2218C9F3008F1784 /* TableWorker.swift */,
 			);
 			path = Implementation;
-			sourceTree = "<group>";
-		};
-		ACE25CBC2218D2EB008F1784 /* DataAccessLayer */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = DataAccessLayer;
 			sourceTree = "<group>";
 		};
 		ACE25CC12218DDDB008F1784 /* Cells */ = {
@@ -478,6 +473,7 @@
 				ACE25CAF2218C9F3008F1784 /* TableWorker.swift in Sources */,
 				AC08191E221A8F110004C6A3 /* ApiConfiguration.swift in Sources */,
 				ACE25CA62218BF4E008F1784 /* PacketRequest.swift in Sources */,
+				CE45E6E4221C8EBD00113557 /* ReuseIdentifierProtocol.swift in Sources */,
 				ACE25CA42218BF0A008F1784 /* NetworkDispatcher.swift in Sources */,
 				AC08192E221BB9D10004C6A3 /* AlbumsCell.swift in Sources */,
 				AC0819162219E8A40004C6A3 /* Artist.swift in Sources */,

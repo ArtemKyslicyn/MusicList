@@ -8,14 +8,12 @@
 
 import Foundation
 
-class ArtistConverter{
+class ArtistConverter {
 	
-	func convertDataToObjects(data:Data) -> [Artist] {
+	func convertDataToObject<T: Codable>(_ type: T.Type = T.self, data: Data) throws -> T {
 		let jsonString = String(decoding: data, as: UTF8.self)
 		let jsonData = jsonString.data(using: .utf8)!
-		print(jsonString)
-		let decoder = JSONDecoder()
-		let result = try! decoder.decode(SearchResult.self, from: jsonData)
-		return result.results
+		//print(jsonString)
+		return try JSONDecoder().decode(T.self, from: jsonData)
 	}
 }

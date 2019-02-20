@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ArtistCell:ConstructorCell{
+class ArtistCell: ConstructorCell{
 	
 	override func configureCellWithItem(item:AbstractItem)
 	{
@@ -16,8 +16,7 @@ class ArtistCell:ConstructorCell{
 		{
 			self.textLabel?.text = item.name + " - " + item.songName
 			self.imageView?.image = UIImage(named:"default-album-art")
-			if let imageUrl = URL(string:item.imageUrl)
-			{
+			if let imageUrl = URL(string:item.imageUrl){
 				self.imageView?.load(url:imageUrl )
 			}
 		}

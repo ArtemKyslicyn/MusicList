@@ -8,6 +8,6 @@
 
 import UIKit
 
-protocol AbstractCell {
-	func configureCellWithItem(item:AbstractItem)	
+protocol AbstractCell: class {
+	func configureCellWithItem(item: AbstractItem)	
 }

@@ -9,6 +9,7 @@
 import Foundation
 
 public struct PacketRequest : AbstractRequest {
+	
 	public let path: String
 	public let method: HTTPMethod
 	public let params: [String: Any?]?

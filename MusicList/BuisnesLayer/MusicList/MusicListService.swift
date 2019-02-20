@@ -20,24 +20,29 @@ class MusicListService : AbstractMusicListService {
 	
 	func searchBy(string: String, success: @escaping ([Artist]) -> Void, errorBlock: @escaping (Error) -> Void) {
 		let requestString = string.replacingOccurrences(of: " ", with: "+")
-		if var components = URLComponents(string: ApiURL.search.rawValue){
-			let searchItem = URLQueryItem(name:termKey, value: requestString)
-			components.queryItems = [searchItem]
-			let url = components.string ?? ApiURL.search.rawValue
-			let request = PacketRequest(path: url)
-			networkDispatcher.dispatch(request: request, onSuccess: { (data) in
-				let artists = self.converter.convertDataToObjects(data: data)
-				DispatchQueue.main.async {
-					success(artists)
-				}
-				
-			}, onError: { (error) in
-				
-				DispatchQueue.main.async {
-					errorBlock(error)
-				}
-			})
+		guard var components = URLComponents(string: ApiURL.search.rawValue) else {
+			errorBlock(ConnError.invalidURL)
+			return;
 		}
+		
+		let searchItem = URLQueryItem(name:termKey, value: requestString)
+		components.queryItems = [searchItem]
+		let url = components.string ?? ApiURL.search.rawValue
+		let request = PacketRequest(path: url)
+		networkDispatcher.dispatch(request: request, onSuccess: { (data) in
+			
+			guard let searchResult = try? self.converter.convertDataToObject(SearchResult.self, data: data) else {
+				errorBlock(ConnError.cantParseData)
+				return;
+			}
+			DispatchQueue.main.async {
+				success(searchResult.results)
+			}
+		}, onError: { (error) in
+			DispatchQueue.main.async {
+				errorBlock(error)
+			}
+		})
 	}
 	
 	

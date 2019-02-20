@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct SearchResult : Codable{
+struct SearchResult : Codable {
 	
 	   let results:[Artist]
 	

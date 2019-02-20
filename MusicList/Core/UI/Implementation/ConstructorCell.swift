@@ -10,18 +10,6 @@ import UIKit
 
 class ConstructorCell : UITableViewCell, AbstractCell {
 	
-//	override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
-//		self.init()
-//	}
-//
-	class func cellIdentifier() -> String{
-		return "AbstractCell"
-	}
-	
-//	required init?(coder aDecoder: NSCoder) {
-//		fatalError("init(coder:) has not been implemented")
-//	}
-//	
 	func configureCellWithItem(item:AbstractItem)
 	{
 		

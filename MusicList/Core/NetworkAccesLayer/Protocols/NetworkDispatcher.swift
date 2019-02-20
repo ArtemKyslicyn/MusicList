@@ -11,6 +11,7 @@ import Foundation
 public enum ConnError: Swift.Error {
 	case invalidURL
 	case noData
+	case cantParseData
 }
 
 public enum HTTPMethod: String {
@@ -23,7 +24,7 @@ public enum HTTPMethod: String {
 
 
 public protocol NetworkDispatcher {
-	func dispatch(request: AbstractRequest, onSuccess: @escaping (Data) -> Void, onError: @escaping (Error) -> Void)
+	func dispatch<T: AbstractRequest>(request: T, onSuccess: @escaping (Data) -> Void, onError: @escaping (Error) -> Void)
 }
 
 
