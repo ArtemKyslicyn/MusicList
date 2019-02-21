@@ -17,8 +17,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 		window = UIWindow(frame: UIScreen.main.bounds)
 
 		let musicListViewController = MusicListViewController()
-		self.window?.rootViewController = musicListViewController
-		window!.makeKeyAndVisible()
+		let navigationController = UINavigationController(rootViewController: musicListViewController)
+		self.window?.rootViewController = navigationController
+		window?.makeKeyAndVisible()
 		return true
 	}
 

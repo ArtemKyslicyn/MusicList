@@ -8,7 +8,9 @@
 
 import UIKit
 
-class MusicListViewController: UIViewController {
+let deafaultSearchString = "John Johnson"
+
+class MusicListViewController: UIViewController, UISearchBarDelegate {
 
 	var musicListService: AbstractMusicListService!
 	var tableWorker: AbstractWorker!
@@ -17,17 +19,26 @@ class MusicListViewController: UIViewController {
 	override func loadView() {
 
 		let view = MusicListView()
+		view.searchBar.delegate = self
+		view.searchBar.text = deafaultSearchString
+		searchByString(searchString: deafaultSearchString)
 		self.tableWorker = TableWorker <TableItem, ArtistCell>(tableView: view.tableView)
 		self.view = view
 
 	}
-	override func viewDidLoad() {
-		super.viewDidLoad()
 
-		listService.searchBy(string: "jack jonhson", success: { artists in
+	func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+		searchBar.resignFirstResponder()
+		if let searchString = searchBar.text, !searchString.isEmpty {
+			searchByString(searchString: searchString)
+		}
+	}
+
+	func searchByString(searchString: String) {
+		listService.searchBy(string: searchString, success: { artists in
 
 			self.tableWorker.items = artists.map { artist -> ArtistItem in
-				 ArtistItem(name: artist.artistName,
+				ArtistItem(name: artist.artistName,
 						   songName: artist.trackName,
 						   imageUrl: artist.imageUrl,
 						   artistId: artist.artistId)
@@ -36,6 +47,10 @@ class MusicListViewController: UIViewController {
 		}, errorBlock: { error in
 			print(error)
 		})
+	}
+
+	override func viewDidLoad() {
+		super.viewDidLoad()
 
 		self.tableWorker.selectedItem = {item in
 			if let item = item as? ArtistItem {
