@@ -16,7 +16,9 @@ public enum ApiURL: String {
 	case lookup = "https://itunes.apple.com/lookup"
 }
 
-let termKey = "term"
-let idKey = "id"
-let entityKey = "entity"
-let albumCategory = "album"
+public struct ApiKeys {
+	static let termKey = "term"
+	static let idKey = "id"
+	static let entityKey = "entity"
+	static let albumCategory = "album"
+}

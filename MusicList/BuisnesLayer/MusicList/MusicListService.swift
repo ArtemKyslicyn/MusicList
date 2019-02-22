@@ -25,16 +25,12 @@ class MusicListService: AbstractMusicListService {
 			return
 		}
 
-		let searchItem = URLQueryItem(name: termKey, value: requestString)
+		let searchItem = URLQueryItem(name: ApiKeys.termKey, value: requestString)
 		components.queryItems = [searchItem]
 		let url = components.string ?? ApiURL.search.rawValue
-		let request = PacketRequest(path: url)
-		networkDispatcher.dispatch(request: request, onSuccess: { data in
+		let request = PacketRequest(path: url, type: SearchResult.self)
+		networkDispatcher.dispatch(request: request, onSuccess: { searchResult in
 
-			guard let searchResult = try? self.converter.convertDataToObject(SearchResult.self, data: data) else {
-				errorBlock(ConnError.cantParseData)
-				return
-			}
 			DispatchQueue.main.async {
 				success(searchResult.results)
 			}
@@ -46,5 +42,4 @@ class MusicListService: AbstractMusicListService {
 	}
 
 	let networkDispatcher: NetworkDispatcher = URLSessionNetworkDispatcher()
-	let converter = ArtistConverter()
 }

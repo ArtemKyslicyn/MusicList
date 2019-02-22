@@ -9,11 +9,11 @@
 import Foundation
 import UIKit
 
-class MusicDeatilViewController: UIViewController {
+class AlbumListViewController: UIViewController {
 
-	var musicListService: AbstractMusicListService!
-	var tableWorker: AbstractWorker!
-	let listService: AbstractMusicDetailtService = MusicDetailService()
+	typealias AlbumAlias = AlbumsCell<AlbumItem>
+	var tableWorker: TableWorker<AlbumAlias>!
+	let listService: AbstractAlbumsListService = AlbumsListService()
 	let albumId: UInt64
 
 	init(albumId: UInt64) {
@@ -28,20 +28,20 @@ class MusicDeatilViewController: UIViewController {
 	override func loadView() {
 
 		let view = MusicDetailView()
-		self.tableWorker = TableWorker <TableItem, AlbumsCell>(tableView: view.tableView)
+		self.tableWorker = TableWorker<AlbumAlias>(with: view.tableView)
 		self.view = view
 
 	}
+
 	override func viewDidLoad() {
 		super.viewDidLoad()
 
-		listService.albumsBy(albumId: self.albumId, success: { artists in
+		listService.albumsBy(albumId: self.albumId, success: { albums in
 
-			self.tableWorker.items = artists.map { artist -> AlbumItem in
-				AlbumItem(name: artist.artistName,
-						   songName: artist.trackName,
-						   imageUrl: artist.imageUrl,
-						   artistId: artist.artistId)
+			self.tableWorker.items = albums.map { artist -> AlbumItem in
+				AlbumItem(name: artist.artistName ?? "",
+						   songName: artist.collectionName ?? "",
+						   imageUrl: artist.imageUrl ?? "")
 			}
 
 		}, errorBlock: { error in

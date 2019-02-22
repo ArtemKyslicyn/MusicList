@@ -9,8 +9,11 @@
 import Foundation
 
 public protocol AbstractRequest {
+	associatedtype Item: Codable
+
 	var path: String { get }
 	var method: HTTPMethod { get }
 	var params: [String: Any?]? { get }
 	var headers: [String: String]? { get }
+	var resultType: Item.Type { get }
 }

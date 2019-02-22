@@ -12,19 +12,15 @@ let deafaultSearchString = "John Johnson"
 
 class MusicListViewController: UIViewController, UISearchBarDelegate {
 
+	typealias ArtistAlias = ArtistCell<ArtistItem>
+
 	var musicListService: AbstractMusicListService!
-	var tableWorker: AbstractWorker!
+	var tableWorker: TableWorker<ArtistAlias>!
 	let listService: AbstractMusicListService = MusicListService()
+	private let listView = MusicListView(frame: CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height))
 
 	override func loadView() {
-
-		let view = MusicListView()
-		view.searchBar.delegate = self
-		view.searchBar.text = deafaultSearchString
-		searchByString(searchString: deafaultSearchString)
-		self.tableWorker = TableWorker <TableItem, ArtistCell>(tableView: view.tableView)
-		self.view = view
-
+		self.view = listView
 	}
 
 	func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
@@ -35,9 +31,9 @@ class MusicListViewController: UIViewController, UISearchBarDelegate {
 	}
 
 	func searchByString(searchString: String) {
-		listService.searchBy(string: searchString, success: { artists in
+		listService.searchBy(string: searchString, success: { [weak self] artists in
 
-			self.tableWorker.items = artists.map { artist -> ArtistItem in
+			self?.tableWorker.items = artists.map { artist -> ArtistItem in
 				ArtistItem(name: artist.artistName,
 						   songName: artist.trackName,
 						   imageUrl: artist.imageUrl,
@@ -51,13 +47,15 @@ class MusicListViewController: UIViewController, UISearchBarDelegate {
 
 	override func viewDidLoad() {
 		super.viewDidLoad()
-
-		self.tableWorker.selectedItem = {item in
-			if let item = item as? ArtistItem {
-				let viewController = MusicDeatilViewController(albumId: item.artistId ?? 0)
-			    self.present(viewController, animated: true, completion: nil)
-			}
-
+        self.view.backgroundColor = .green
+		listView.searchBar.delegate = self
+		listView.searchBar.text = deafaultSearchString
+		searchByString(searchString: deafaultSearchString)
+		self.tableWorker = TableWorker<ArtistAlias>(with: listView.tableView)
+		self.tableWorker.selectedItem = { [weak self] item in
+			let viewController = AlbumListViewController(albumId: item.artistId ?? 0)
+			self?.navigationController?.pushViewController(viewController, animated: true)
 		}
+		listView.setNeedsLayout()
 	}
 }

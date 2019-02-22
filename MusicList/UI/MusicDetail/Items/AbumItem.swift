@@ -8,7 +8,13 @@
 
 import Foundation
 
-class AlbumItem: TableItem {
+protocol AlbumItemProtocol: Any {
+	var name: String { get }
+	var songName: String { get }
+	var imageUrl: String { get }
+}
+
+struct AlbumItem: AlbumItemProtocol {
 
 	let name: String
 	let songName: String

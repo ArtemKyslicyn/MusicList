@@ -9,5 +9,7 @@
 import UIKit
 
 protocol AbstractCell: ReuseIdentifierProtocol {
-	func configureCellWithItem(item: AbstractItem)
+	associatedtype Item
+
+	func configureCell(with item: Item)
 }

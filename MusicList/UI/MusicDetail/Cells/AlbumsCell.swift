@@ -8,15 +8,13 @@
 
 import UIKit
 
-class AlbumsCell: UITableViewCell, AbstractCell {
+class AlbumsCell <T>: UITableViewCell, AbstractCell where T: AlbumItemProtocol {
 
-	 func configureCellWithItem(item: AbstractItem) {
-		if let item = item as? AlbumItem {
-			self.textLabel?.text = item.name + " - " + item.songName
-			self.imageView?.image = UIImage(named: "default-album-art")
-			if let imageUrl = URL(string: item.imageUrl) {
-				self.imageView?.load(url: imageUrl )
-			}
+	 func configureCell(with item: T) {
+		self.textLabel?.text = item.name + " - " + item.songName
+		self.imageView?.image = UIImage(named: "default-album-art")
+		if let imageUrl = URL(string: item.imageUrl) {
+			self.imageView?.load(url: imageUrl )
 		}
 	}
 

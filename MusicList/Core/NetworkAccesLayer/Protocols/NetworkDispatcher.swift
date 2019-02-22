@@ -23,5 +23,5 @@ public enum HTTPMethod: String {
 }
 
 public protocol NetworkDispatcher {
-	func dispatch<T: AbstractRequest>(request: T, onSuccess: @escaping (Data) -> Void, onError: @escaping (Error) -> Void)
+	func dispatch<T: AbstractRequest>(request: T, onSuccess: @escaping (T.Item) -> Void, onError: @escaping (Error) -> Void)
 }

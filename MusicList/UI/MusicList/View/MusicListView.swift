@@ -17,7 +17,6 @@ class MusicListView: UIView {
 		super.init(frame: frame)
 		 self.addSubview(tableView)
          self.tableView.tableHeaderView = searchBar
-		 self.translatesAutoresizingMaskIntoConstraints = false
 		 tableView.translatesAutoresizingMaskIntoConstraints = false
 		setupTableViewConstraints()
 	}
@@ -34,5 +33,4 @@ class MusicListView: UIView {
 	required init?(coder aDecoder: NSCoder) {
 		fatalError("init(coder:) has not been implemented")
 	}
-
 }

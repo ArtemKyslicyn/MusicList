@@ -31,14 +31,9 @@ struct Artist: Codable {
 		artistName = try values.decode(String.self, forKey: .artistName)
 		trackName = try values.decode(String.self, forKey: .trackName)
 		imageUrl = try values.decode(String.self, forKey: .imageUrl)
-		do {
-			trackId = try values.decode(UInt64?.self, forKey: .trackId)
-			artistId = try values.decode(UInt64?.self, forKey: .artistId)
-			collectionId = try values.decode(UInt64?.self, forKey: .collectionId)
-		} catch {
-
-		}
-
+		trackId = try? values.decode(UInt64.self, forKey: .trackId)
+		artistId = try? values.decode(UInt64.self, forKey: .artistId)
+		collectionId = try? values.decode(UInt64.self, forKey: .collectionId)
 	}
 
 }

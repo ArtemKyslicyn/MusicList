@@ -14,12 +14,11 @@ class MusicDetailView: UIView {
 
 	override init(frame: CGRect) {
 		super.init(frame: frame)
-		self.backgroundColor = UIColor.red
+		backgroundColor = .red
 		tableView.backgroundColor = UIColor.green
 
 		self.addSubview(tableView)
 
-		self.translatesAutoresizingMaskIntoConstraints = false
 		tableView.translatesAutoresizingMaskIntoConstraints = false
 
 		setupTableViewConstraints()

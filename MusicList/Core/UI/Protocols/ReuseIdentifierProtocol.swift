@@ -7,12 +7,10 @@
 
 import UIKit
 
-protocol ReuseIdentifierProtocol: class { }
+protocol ReuseIdentifierProtocol where Self: UITableViewCell { }
 
 extension ReuseIdentifierProtocol {
 	static var cellIdentifier: String {
 		return String(describing: self)
 	}
 }
-
-extension UITableViewCell: ReuseIdentifierProtocol { }
