@@ -8,7 +8,7 @@
 
 import UIKit
 
-class MusicListView: UIView {
+final class MusicListView: UIView {
 
 	var tableView: UITableView = UITableView()
 	var searchBar: UISearchBar = UISearchBar(frame: CGRect(x: 0, y: 0, width: 0, height: 50))

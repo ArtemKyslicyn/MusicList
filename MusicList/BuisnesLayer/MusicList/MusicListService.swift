@@ -23,7 +23,7 @@ protocol AbstractMusicListService {
 }
 
 /// service for getting artissts
-class MusicListService: AbstractMusicListService {
+final class MusicListService: AbstractMusicListService {
 
 	let networkDispatcher: NetworkDispatcher
 

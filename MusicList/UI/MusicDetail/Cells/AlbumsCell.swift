@@ -9,7 +9,7 @@
 import UIKit
 
 /// Cell for albums
-class AlbumsCell <T>: UITableViewCell, AbstractCell where T: AlbumItemProtocol {
+final class AlbumsCell <T>: UITableViewCell, AbstractCell where T: AlbumItemProtocol {
 
 	 /// configure cell with template object
 	 ///

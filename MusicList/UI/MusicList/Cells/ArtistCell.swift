@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ArtistCell<T>: UITableViewCell, AbstractCell where T: ArtistItemProtocol {
+final class ArtistCell<T>: UITableViewCell, AbstractCell where T: ArtistItemProtocol {
 
 	 func configureCell(with item: T) {
 		self.textLabel?.text = item.name + " - " + item.songName

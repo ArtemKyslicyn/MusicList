@@ -17,7 +17,7 @@ protocol AbstractAlbumsListService {
 }
 
 /// Service for getting list of albums for Artist
-class AlbumsListService: AbstractAlbumsListService {
+final class AlbumsListService: AbstractAlbumsListService {
 
 	let networkDispatcher: NetworkDispatcher!
 

@@ -10,7 +10,7 @@ import UIKit
 
 let deafaultSearchString = "John Johnson"
 
-class MusicListViewController: UIViewController, UISearchBarDelegate {
+final class MusicListViewController: UIViewController, UISearchBarDelegate {
 
 	typealias ArtistAlias = ArtistCell<ArtistItem>
 

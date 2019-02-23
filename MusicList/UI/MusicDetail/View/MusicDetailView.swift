@@ -9,7 +9,7 @@
 import UIKit
 
 /// Album ofdetail list
-class MusicDetailView: UIView {
+final class MusicDetailView: UIView {
 
 	/// tableView of albums lis
 	var tableView: UITableView = UITableView()

@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-class AlbumListViewController: UIViewController {
+final class AlbumListViewController: UIViewController {
 
 	typealias AlbumAlias = AlbumsCell<AlbumItem>
 	private var tableWorker: TableWorker<AlbumAlias>!
