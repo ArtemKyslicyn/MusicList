@@ -8,6 +8,7 @@
 
 import Foundation
 
+/// ArtistItemProtocol
 protocol ArtistItemProtocol: Any {
 	var name: String { get }
 	var songName: String { get }
@@ -15,6 +16,7 @@ protocol ArtistItemProtocol: Any {
 	var artistId: UInt64? { get }
 }
 
+/// Artist Item Implemetation
 struct ArtistItem: ArtistItemProtocol {
 	let name: String
 	let songName: String

@@ -8,8 +8,12 @@
 
 import UIKit
 
+/// Cell for albums
 class AlbumsCell <T>: UITableViewCell, AbstractCell where T: AlbumItemProtocol {
 
+	 /// configure cell with template object
+	 ///
+	 /// - Parameter item: item for configuration
 	 func configureCell(with item: T) {
 		self.textLabel?.text = item.name + " - " + item.songName
 		self.imageView?.image = UIImage(named: "default-album-art")

@@ -8,6 +8,7 @@
 
 import Foundation
 
+/// Protocol for absract request
 public protocol AbstractRequest {
 	associatedtype Item: Codable
 

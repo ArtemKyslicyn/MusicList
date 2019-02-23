@@ -14,10 +14,9 @@ class MusicListViewController: UIViewController, UISearchBarDelegate {
 
 	typealias ArtistAlias = ArtistCell<ArtistItem>
 
-	var musicListService: AbstractMusicListService!
-	var tableWorker: TableWorker<ArtistAlias>!
-	let listService: AbstractMusicListService = MusicListService()
-	private let listView = MusicListView(frame: CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height))
+	private var tableWorker: TableWorker<ArtistAlias>!
+	private let listService: AbstractMusicListService = MusicListService()
+	private let listView = MusicListView()
 
 	override func loadView() {
 		self.view = listView

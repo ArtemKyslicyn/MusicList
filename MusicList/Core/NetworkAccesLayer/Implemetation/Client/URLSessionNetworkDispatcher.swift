@@ -8,8 +8,15 @@
 
 import Foundation
 
+/// Network Dispatcher
 public class URLSessionNetworkDispatcher: NetworkDispatcher {
 
+	/// Dispatch Package
+	///
+	/// - Parameters:
+	///   - request: Request Object
+	///   - onSuccess: successClosure
+	///   - onError: error Closure
 	public func dispatch<T>(request: T, onSuccess: @escaping (T.Item) -> Void, onError: @escaping (Error) -> Void) where T: AbstractRequest {
 
 		guard let url = URL(string: request.path) else {

@@ -12,13 +12,20 @@ import UIKit
 class AlbumListViewController: UIViewController {
 
 	typealias AlbumAlias = AlbumsCell<AlbumItem>
-	var tableWorker: TableWorker<AlbumAlias>!
-	let listService: AbstractAlbumsListService = AlbumsListService()
-	let albumId: UInt64
+	private var tableWorker: TableWorker<AlbumAlias>!
+	private let listService: AbstractAlbumsListService
+	private let albumId: UInt64
 
-	init(albumId: UInt64) {
+	/// Albums list init with lbum id and injection
+	///
+	/// - Parameters:
+	///   - albumId: idetifier of album
+	///   - listService: injected albu, list service
+	init(albumId: UInt64, listService: AbstractAlbumsListService = AlbumsListService() ) {
 		self.albumId = albumId
+		self.listService = listService
 		super.init(nibName: nil, bundle: nil)
+
 	}
 
 	required init?(coder aDecoder: NSCoder) {

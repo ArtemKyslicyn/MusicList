@@ -10,11 +10,17 @@ import Foundation
 
 struct Artist: Codable {
 
+	/// artistName
 	let artistName: String
+	/// trackName
 	let trackName: String
+	/// imageUrl
 	let imageUrl: String
+	/// trackId
 	var trackId: UInt64?
+	/// artistId
 	var artistId: UInt64?
+	/// collectionId
 	var collectionId: UInt64?
 
 	enum CodingKeys: String, CodingKey {

@@ -8,10 +8,16 @@
 
 import Foundation
 
+/// Model albums
 struct Albums: Codable {
 
+	/// artistName
 	let artistName: String?
+
+	/// collectionName - name of collection
 	let collectionName: String?
+
+	/// imageUrl - image of album
 	let imageUrl: String?
 
 	enum CodingKeys: String, CodingKey {

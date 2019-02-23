@@ -9,6 +9,12 @@
 import UIKit
 
 extension UIImageView {
+	
+	/// load image by URL if error method returns default image
+	///
+	/// - Parameters:
+	///   - url: request url
+	///   - defaultImage: default image
 	func load(url: URL, defaultImage: UIImage? = nil) {
 		DispatchQueue.global().async { [weak self] in
 			if let data = try? Data(contentsOf: url), let image = UIImage(data: data) {

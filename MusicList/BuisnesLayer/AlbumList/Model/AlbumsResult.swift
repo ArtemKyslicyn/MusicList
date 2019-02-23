@@ -8,8 +8,10 @@
 
 import Foundation
 
+/// AlbumsResult - container album 
 struct AlbumsResult: Codable {
 
+	/// results of albums
 	let results: [Albums]
 
 	enum CodingKeys: String, CodingKey {

@@ -13,11 +13,33 @@ typealias ErrorBlock = (Error) -> Void
 
 protocol AbstractMusicListService {
 
+	/// searchin by string
+	///
+	/// - Parameters:
+	///   - string: search string
+	///   - success: success closure
+	///   - errorBlock: error closure
 	func searchBy(string: String, success:@escaping ArtistSuccesBlock, errorBlock:@escaping ErrorBlock)
 }
 
+/// service for getting artissts
 class MusicListService: AbstractMusicListService {
 
+	let networkDispatcher: NetworkDispatcher
+
+	/// init service
+	///
+	/// - Parameter networkDispatcher: injection for network dispatcher
+	init(networkDispatcher: NetworkDispatcher = URLSessionNetworkDispatcher()) {
+		self.networkDispatcher = networkDispatcher
+	}
+
+	/// searchin by string
+	///
+	/// - Parameters:
+	///   - string: search string
+	///   - success: success closure
+	///   - errorBlock: error closure
 	func searchBy(string: String, success: @escaping ([Artist]) -> Void, errorBlock: @escaping (Error) -> Void) {
 		let requestString = string.replacingOccurrences(of: " ", with: "+")
 		guard var components = URLComponents(string: ApiURL.search.rawValue) else {
@@ -32,7 +54,8 @@ class MusicListService: AbstractMusicListService {
 		networkDispatcher.dispatch(request: request, onSuccess: { searchResult in
 
 			DispatchQueue.main.async {
-				success(searchResult.results)
+				let results = searchResult.results.filter { $0.artistId != nil }
+				success(results)
 			}
 		}, onError: { error in
 			DispatchQueue.main.async {
@@ -41,5 +64,4 @@ class MusicListService: AbstractMusicListService {
 		})
 	}
 
-	let networkDispatcher: NetworkDispatcher = URLSessionNetworkDispatcher()
 }

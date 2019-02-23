@@ -8,29 +8,28 @@
 
 import UIKit
 
+/// Album ofdetail list
 class MusicDetailView: UIView {
 
+	/// tableView of albums lis
 	var tableView: UITableView = UITableView()
 
+	/// init
+	///
+	/// - Parameter frame: rect
 	override init(frame: CGRect) {
 		super.init(frame: frame)
-		backgroundColor = .red
-		tableView.backgroundColor = UIColor.green
-
 		self.addSubview(tableView)
-
 		tableView.translatesAutoresizingMaskIntoConstraints = false
 
 		setupTableViewConstraints()
 	}
 
 	func setupTableViewConstraints() {
-		NSLayoutConstraint.activate([
-			tableView.leftAnchor.constraint(equalTo: self.leftAnchor),
-			tableView.rightAnchor.constraint(equalTo: self.rightAnchor),
-			tableView.topAnchor.constraint(equalTo: self.topAnchor),
-			tableView.bottomAnchor.constraint(equalTo: self.bottomAnchor)
-		])
+			tableView.leftAnchor.constraint(equalTo: self.leftAnchor).isActive = true
+			tableView.rightAnchor.constraint(equalTo: self.rightAnchor).isActive = true
+			tableView.topAnchor.constraint(equalTo: self.topAnchor).isActive = true
+			tableView.bottomAnchor.constraint(equalTo: self.bottomAnchor).isActive = true
 	}
 
 	required init?(coder aDecoder: NSCoder) {

@@ -8,8 +8,12 @@
 
 import UIKit
 
+/// AbstractCell
 protocol AbstractCell: ReuseIdentifierProtocol {
 	associatedtype Item
 
+	/// metod for configuration Cell
+	///
+	/// - Parameter item: configuration object for cell
 	func configureCell(with item: Item)
 }
