@@ -43,9 +43,9 @@ class AlbumListViewController: UIViewController {
 	override func viewDidLoad() {
 		super.viewDidLoad()
 
-		listService.albumsBy(albumId: self.albumId, success: { albums in
+		listService.albumsBy(albumId: self.albumId, success: { [weak self] albums in
 
-			self.tableWorker.items = albums.map { artist -> AlbumItem in
+			self?.tableWorker.items = albums.map { artist -> AlbumItem in
 				AlbumItem(name: artist.artistName ?? "",
 						   songName: artist.collectionName ?? "",
 						   imageUrl: artist.imageUrl ?? "")

@@ -10,7 +10,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "MusicList/UI/MusicList/MusicListViewController.swift"
-            timestampString = "572614540.300656"
+            timestampString = "572619785.235225"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "27"
@@ -137,54 +137,6 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "MusicList/UI/MusicDetail/AlbumListViewController.swift"
-            timestampString = "572614540.301015"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "41"
-            endingLineNumber = "41"
-            landmarkName = "viewDidLoad()"
-            landmarkType = "7">
-            <Locations>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (Swift.Array&lt;MusicList.Albums&gt;) -&gt; () in MusicList.AlbumListViewController.viewDidLoad() -&gt; ()"
-                  moduleName = "MusicList"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/arcilite/Documents/MusicListGitHub/MusicList/UI/MusicDetail/AlbumListViewController.swift"
-                  timestampString = "572556518.906009"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "41"
-                  endingLineNumber = "41"
-                  offsetFromSymbolStart = "51">
-               </Location>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (MusicList.Albums) -&gt; MusicList.AlbumItem in closure #1 (Swift.Array&lt;MusicList.Albums&gt;) -&gt; () in MusicList.AlbumListViewController.viewDidLoad() -&gt; ()"
-                  moduleName = "MusicList"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/arcilite/Documents/MusicListGitHub/MusicList/UI/MusicDetail/AlbumListViewController.swift"
-                  timestampString = "572556518.9085079"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "42"
-                  endingLineNumber = "42"
-                  offsetFromSymbolStart = "27">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
             filePath = "MusicList/BuisnesLayer/AlbumList/AlbumsListService.swift"
             timestampString = "572607018.438822"
             startingColumnNumber = "9223372036854775807"
@@ -218,11 +170,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "MusicList/Core/NetworkAccesLayer/Implemetation/Client/URLSessionNetworkDispatcher.swift"
-            timestampString = "572614540.301276"
+            timestampString = "572619785.235622"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "24"
-            endingLineNumber = "24"
+            startingLineNumber = "31"
+            endingLineNumber = "31"
             landmarkName = "dispatch(request:onSuccess:onError:)"
             landmarkType = "7">
          </BreakpointContent>

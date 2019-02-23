@@ -9,7 +9,7 @@
 import UIKit
 
 extension UIImageView {
-	
+
 	/// load image by URL if error method returns default image
 	///
 	/// - Parameters:

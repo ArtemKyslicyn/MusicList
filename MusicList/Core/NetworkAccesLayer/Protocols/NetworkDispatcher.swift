@@ -36,7 +36,7 @@ public enum HTTPMethod: String {
 
 /// NetworkDispatcher
 public protocol NetworkDispatcher {
-	
+
 	/// Dispatch Package
 	///
 	/// - Parameters:

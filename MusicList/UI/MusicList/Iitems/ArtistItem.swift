@@ -10,9 +10,13 @@ import Foundation
 
 /// ArtistItemProtocol
 protocol ArtistItemProtocol: Any {
+	/// name - name of Artis
 	var name: String { get }
+	/// songName - name of song
 	var songName: String { get }
+	/// imageUrl - image Url link
 	var imageUrl: String { get }
+	/// artistId - id artist
 	var artistId: UInt64? { get }
 }
 
@@ -23,6 +27,13 @@ struct ArtistItem: ArtistItemProtocol {
 	let imageUrl: String
 	let artistId: UInt64?
 
+	/// Description
+	///
+	/// - Parameters:
+	///   - name: name
+	///   - songName: song name
+	///   - imageUrl: image Url
+	///   - artistId: artist id
 	init(name: String, songName: String, imageUrl: String, artistId: UInt64? = nil) {
 		self.name = name
 		self.songName = songName
