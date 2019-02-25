@@ -19,6 +19,15 @@ public enum ConnError: Swift.Error {
 	case cantParseData
 }
 
+/// Network Result Enum
+///
+/// - Success: success Value
+/// - Error: errorValue
+public enum Result <V, E> {
+	case success(V)
+	case error(E)
+}
+
 /// HTTPMethod
 ///
 /// - get: HTTP get request
@@ -43,5 +52,11 @@ public protocol NetworkDispatcher {
 	///   - request: Request Object
 	///   - onSuccess: successClosure
 	///   - onError: error Closure
-	func dispatch<T: AbstractRequest>(request: T, onSuccess: @escaping (T.Item) -> Void, onError: @escaping (Error) -> Void)
+	func dispatch<T>(request: T, queue: DispatchQueue, onResult: @escaping (Result<T.Item, Error>) -> Void) where T: AbstractRequest
+}
+
+extension NetworkDispatcher {
+	func dispatch<T>(request: T, queue: DispatchQueue = DispatchQueue.main, onResult: @escaping (Result<T.Item, Error>) -> Void) where T: AbstractRequest {
+		return dispatch(request: request, queue: queue, onResult: onResult)
+	}
 }

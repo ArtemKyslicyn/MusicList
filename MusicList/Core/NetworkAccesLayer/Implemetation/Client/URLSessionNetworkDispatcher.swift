@@ -17,10 +17,10 @@ public class URLSessionNetworkDispatcher: NetworkDispatcher {
 	///   - request: Request Object
 	///   - onSuccess: successClosure
 	///   - onError: error Closure
-	public func dispatch<T>(request: T, onSuccess: @escaping (T.Item) -> Void, onError: @escaping (Error) -> Void) where T: AbstractRequest {
+	public func dispatch<T>(request: T, queue: DispatchQueue = DispatchQueue.main, onResult: @escaping (Result<T.Item, Error>) -> Void) where T: AbstractRequest {
 
 		guard let url = URL(string: request.path) else {
-			onError(ConnError.invalidURL)
+			onResult(.error(ConnError.invalidURL))
 			return
 		}
 
@@ -29,17 +29,23 @@ public class URLSessionNetworkDispatcher: NetworkDispatcher {
 
 		URLSession.shared.dataTask(with: urlRequest) { data, _, error in
 			if let error = error {
-				onError(error)
+				queue.async {
+					onResult(.error(error))
+				}
 				return
 			}
 
 			guard let data = data, let result = try? JSONDecoder().decode(T.Item.self, from: data) else {
-					onError(ConnError.noData)
-					return
+				queue.async {
+					onResult(.error(ConnError.noData))
+				}
+				return
 			}
-			onSuccess(result)
+			queue.async {
+				onResult(.success(result))
+			}
 
 		}.resume()
-
 	}
+
 }

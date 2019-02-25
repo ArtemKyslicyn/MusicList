@@ -10,7 +10,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "MusicList/UI/MusicList/MusicListViewController.swift"
-            timestampString = "572620564.205037"
+            timestampString = "572777242.148299"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "27"
@@ -74,7 +74,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "MusicList/Core/UI/Implementation/TableWorker.swift"
-            timestampString = "572542622.360044"
+            timestampString = "572777242.1485209"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "41"
@@ -90,7 +90,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "MusicList/Core/UI/Implementation/TableWorker.swift"
-            timestampString = "572542622.3601201"
+            timestampString = "572777242.148623"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "41"
@@ -106,7 +106,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "MusicList/Core/UI/Implementation/TableWorker.swift"
-            timestampString = "572542622.360185"
+            timestampString = "572777242.148711"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "16"
@@ -122,7 +122,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "MusicList/Core/UI/Implementation/TableWorker.swift"
-            timestampString = "572542622.360356"
+            timestampString = "572777242.148798"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "36"
@@ -138,7 +138,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "MusicList/BuisnesLayer/AlbumList/AlbumsListService.swift"
-            timestampString = "572607018.438822"
+            timestampString = "572777242.148886"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "38"
@@ -154,7 +154,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "MusicList/BuisnesLayer/AlbumList/AlbumsListService.swift"
-            timestampString = "572607018.439081"
+            timestampString = "572777242.148982"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "43"
@@ -170,12 +170,44 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "MusicList/Core/NetworkAccesLayer/Implemetation/Client/URLSessionNetworkDispatcher.swift"
-            timestampString = "572620564.207224"
+            timestampString = "572777242.149071"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "31"
             endingLineNumber = "31"
-            landmarkName = "dispatch(request:onSuccess:onError:)"
+            landmarkName = "dispatch(request:queue:onResult:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "MusicList/BuisnesLayer/AlbumList/AlbumsListService.swift"
+            timestampString = "572777242.1491441"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "55"
+            endingLineNumber = "55"
+            landmarkName = "albumsBy(albumId:success:errorBlock:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "MusicList/BuisnesLayer/AlbumList/AlbumsListService.swift"
+            timestampString = "572777242.149193"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "53"
+            endingLineNumber = "53"
+            landmarkName = "albumsBy(albumId:success:errorBlock:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

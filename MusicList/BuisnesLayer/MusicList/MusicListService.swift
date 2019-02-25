@@ -51,17 +51,18 @@ final class MusicListService: AbstractMusicListService {
 		components.queryItems = [searchItem]
 		let url = components.string ?? ApiURL.search.rawValue
 		let request = PacketRequest(path: url, type: SearchResult.self)
-		networkDispatcher.dispatch(request: request, onSuccess: { searchResult in
 
-			DispatchQueue.main.async {
-				let results = searchResult.results.filter { $0.artistId != nil }
+		networkDispatcher.dispatch(request: request) { resultObject in
+
+			switch resultObject {
+			case .error(let error):
+				errorBlock(error)
+			case .success(let result):
+				let results = result.results.filter { $0.artistId != nil }
 				success(results)
 			}
-		}, onError: { error in
-			DispatchQueue.main.async {
-				errorBlock(error)
-			}
-		})
+
+		}
 	}
 
 }

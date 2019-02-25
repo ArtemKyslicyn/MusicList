@@ -47,16 +47,16 @@ final class AlbumsListService: AbstractAlbumsListService {
 		let url = components.string ?? ApiURL.lookup.rawValue
 
 		let request = PacketRequest(path: url, type: AlbumsResult.self)
-		networkDispatcher.dispatch(request: request, onSuccess: { searchResult in
 
-			DispatchQueue.main.async {
-				success(searchResult.results)
-			}
-		}, onError: { error in
+		networkDispatcher.dispatch(request: request) { resultObject in
 
-			DispatchQueue.main.async {
+			switch resultObject {
+			case .error(let error):
 				errorBlock(error)
+			case .success(let result):
+				success(result.results)
 			}
-		})
+
+		}
 	}
 }
