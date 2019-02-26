@@ -15,9 +15,20 @@ final class MusicListViewController: UIViewController, UISearchBarDelegate {
 	typealias ArtistAlias = ArtistCell<ArtistItem>
 
 	private var tableWorker: TableWorker<ArtistAlias>!
-	private let listService: AbstractMusicListService = MusicListService()
+	private let listService: AbstractMusicListService
 	private let listView = MusicListView()
 
+	/// Albums list init with injection
+	///
+	/// - Parameters:
+	///   - listService: injected albu, list service
+	init(listService: MusicListService = MusicListService() ) {
+		self.listService = listService
+		super.init(nibName: nil, bundle: nil)
+	}
+	required init?(coder aDecoder: NSCoder) {
+		fatalError("init(coder:) has not been implemented")
+	}
 	override func loadView() {
 		self.view = listView
 	}

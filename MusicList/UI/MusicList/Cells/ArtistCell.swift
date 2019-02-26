@@ -16,6 +16,7 @@ final class ArtistCell<T>: UITableViewCell, AbstractCell where T: ArtistItemProt
 		if let imageUrl = URL(string: item.imageUrl) {
 			self.imageView?.load(url: imageUrl, defaultImage: UIImage(named: "default-album-art")  )
 		}
+		self.selectionStyle = .none
 	}
 
 }

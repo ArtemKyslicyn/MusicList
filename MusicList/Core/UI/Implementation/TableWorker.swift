@@ -44,7 +44,6 @@ class TableWorker<Cell: AbstractCell> : NSObject, UITableViewDelegate, UITableVi
 		if items.count > indexPath.row, let cell = cell as? Cell {
 			cell.configureCell(with: self.items[indexPath.row])
 		}
-
 		return cell
 	}
 }

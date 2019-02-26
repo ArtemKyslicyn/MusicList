@@ -20,6 +20,7 @@ final class AlbumsCell <T>: UITableViewCell, AbstractCell where T: AlbumItemProt
 		if let imageUrl = URL(string: item.imageUrl) {
 			self.imageView?.load(url: imageUrl )
 		}
+		self.selectionStyle = .none
 	}
 
 }
